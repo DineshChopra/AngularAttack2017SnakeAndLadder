@@ -1,0 +1,44 @@
+.diceClass-1{
+    background: url('/assets/img/dice.png') no-repeat 0 0;
+    width: 87px;
+    height: 87px;
+}
+
+.diceClass-2{
+    background: url('/assets/img/dice.png') no-repeat -110px 0;
+    width: 87px;
+    height: 87px;
+}
+
+.diceClass-3{
+    background: url('/assets/img/dice.png') no-repeat -221px 0;
+    width: 87px;
+    height: 87px;
+}
+
+.diceClass-4{
+    background: url('/assets/img/dice.png') no-repeat -332px 0;
+    width: 87px;
+    height: 87px;
+}
+
+.diceClass-5{
+    background: url('/assets/img/dice.png') no-repeat -443px 0;
+    width: 87px;
+    height: 87px;
+}
+
+.diceClass-6{
+    background: url('/assets/img/dice.png') no-repeat -553px 0;
+    width: 87px;
+    height: 87px;
+}
+
+.margin-top-1em{
+    margin-top: 1em;
+}
+
+.overflow{
+    overflow: scroll;
+    max-height: 25em;
+}

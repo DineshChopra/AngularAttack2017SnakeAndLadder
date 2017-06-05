@@ -1,0 +1,37 @@
+<div *ngFor="let player of players" class="flex">
+  <i class="fa fa-pencil-square-o" aria-hidden="true" *ngIf="player.editOption" (click)="player.editOption = false"></i>
+  <i class="fa fa-floppy-o" aria-hidden="true" *ngIf="!player.editOption" (click)="player.editOption = true"></i>
+  <span [ngClass]="player.playerIcon"></span>&nbsp;
+  <span *ngIf="player.editOption" class="badge badge-default">{{player.name}}</span>&nbsp;
+  <input type="text" [(ngModel)]="player.name" (keyup.enter)="updatePlayer(player)" (blur)="updatePlayer(player)" *ngIf="!player.editOption"
+  />
+  <span class="badge badge-info">{{player.updatedPosition}}</span>&nbsp;
+  <button [disabled]="player != activePlayer || diceValue>0" (click)="rollDice();" [ngClass]="player != activePlayer || diceValue > 0 ? 'btn-danger' : 'btn-success'"
+    class="btn btn-sm"> Roll Dice </button>&nbsp;
+  <button [disabled]="player != activePlayer || diceValue==0" (click)="updatedPosition()" [ngClass]="player != activePlayer || diceValue == 0 ? 'btn-danger' : 'btn-success'"
+    class="btn btn-sm"> Update Position</button>
+</div>
+<h1 *ngIf="diceValue>0">
+  <div class="diceClass-{{diceValue}}"></div>
+</h1>
+<h1 *ngIf="winner">Winner is {{winner.name}}</h1>
+<button *ngIf="!activePlayer" (click)="startGame()" class="btn btn-primary btn-sm"> Start Game</button>
+<div class="card margin-top-1em overflow" *ngIf="stats.length > 0">
+  <h3 class="card-header">Game Statatics</h3>
+  <div class="card-block">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Dice value</th>
+          <th>Position</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let stat of stats">
+        <td><span class="badge badge-default">{{stat.name}}</span></td>
+        <td><span class="badge badge-primary">{{stat.diceValue}}</span></td>
+        <td><span class="badge badge-info">{{stat.updatedPosition}}</span></td>
+      </tr>
+    </table>
+  </div>
+</div>

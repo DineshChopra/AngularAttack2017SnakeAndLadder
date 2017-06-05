@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+.player-1{
+    background: url('/assets/img/player-1.png') no-repeat;
+    display: block;
+    height: 25px;
+}
+.player-2{
+    background: url('/assets/img/player-2.png') no-repeat;
+    display: block;
+    height: 25px;
+}
+
